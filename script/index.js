@@ -12,21 +12,6 @@ const loadLevelWord = (id) =>{
     
 }
 
-// id
-// : 
-// 81
-// level
-// : 
-// 1
-// meaning
-// : 
-// "বল"
-// pronunciation
-// : 
-// "বল"
-// word
-// : 
-// "Ball"
 
 const displayLevelWard = (words) => {
     const wardContainer = document.getElementById("ward-container")
@@ -37,7 +22,7 @@ const displayLevelWard = (words) => {
         
     const card = document.createElement("div")
     card.innerHTML = `
-    <div class="bg-white rounded-xl shadow-sm text-center py-10 px-3 space-y-4">
+    <div class="bg-white rounded-xl shadow-sm text-center py-10 px-5 space-y-4">
                 <h2 class="font-bold text-2xl">${word.word}</h2>
                 <p class="font-semibold">Meaning / pronunciation</p>
                 <div class="text-2xl font-medium font-bangla">
@@ -63,17 +48,18 @@ const displayLevelWard = (words) => {
 
 
 const displayLessons = (lessons) =>{
+    //   1. get the container & empty
     const levelContainer = document.getElementById("level-container")
     levelContainer.innerHTML = ""
-
+     //   2. get into evey lessons
     for (let lesson of lessons){
-
+     // 3. create Element
         const btnDiv = document.createElement("div")
         btnDiv.innerHTML = `
         <button onclick="loadLevelWord(${lesson.level_no})" class="btn btn-outline btn-primary">
         <i class="fa-solid fa-book-open"></i>Lessons - ${lesson.level_no}
         </button>`;
-
+    //         4. append into container
         levelContainer.append(btnDiv)
         
 
